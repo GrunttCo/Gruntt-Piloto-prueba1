@@ -1,0 +1,321 @@
+/* ═══════════════════════════════════════════════════════════
+   GRUNTT DESIGN SYSTEM — Landing Tokens
+   Versión: 1.0 | Abril 2026
+   Uso: importar en cualquier landing de Gruntt
+   @import url('gruntt-tokens.css');
+═══════════════════════════════════════════════════════════ */
+
+/* ── Google Font ─────────────────────────────────────────
+   En el <head> del HTML agregar:
+   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+──────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── COLORES ──────────────────────────────────────── */
+  --g-bg:           #141414;   /* fondo principal */
+  --g-bg-card:      #1c1c1c;   /* tarjetas oscuras */
+  --g-bg-card2:     #222222;   /* tarjeta destacada */
+  --g-bg-stat:      #f2f2f2;   /* stat boxes dentro de card blanca */
+
+  --g-orange:       #FF5C00;   /* naranja principal */
+  --g-orange-light: #FF8040;   /* naranja claro (para gradientes) */
+  --g-orange-dark:  #CC3D00;   /* naranja oscuro (para gradientes) */
+  --g-orange-bg:    #2a1a0e;   /* fondo pill naranja navbar */
+
+  --g-green:        #2DC55E;   /* verde Telegram (texto CTA secundario) */
+
+  --g-white:        #ffffff;
+  --g-gray:         #8a8a8a;   /* texto secundario */
+  --g-border:       #2c2c2c;   /* bordes sutiles */
+  --g-text-dark:    #111111;   /* texto sobre fondo blanco */
+
+  /* ── TIPOGRAFÍA ───────────────────────────────────── */
+  --g-font:         'Red Hat Display', 'Inter', sans-serif;
+
+  /* Tamaños */
+  --g-text-xs:      .72rem;    /* 11.5px — labels, badges */
+  --g-text-sm:      .82rem;    /* 13px  — notas, metadatos */
+  --g-text-base:    1rem;      /* 16px  — cuerpo */
+  --g-text-lg:      1.1rem;    /* 17.5px */
+  --g-text-xl:      1.3rem;    /* 20.8px — subtítulos */
+  --g-text-2xl:     1.55rem;   /* 24.8px — section titles */
+  --g-text-3xl:     2rem;      /* 32px */
+  --g-text-hero:    clamp(2rem, 3.2vw, 2.85rem); /* títulos hero */
+
+  /* Pesos */
+  --g-regular:      400;
+  --g-medium:       500;
+  --g-semibold:     600;
+  --g-bold:         700;
+  --g-extrabold:    800;
+  --g-black:        900;
+
+  /* ── ESPACIADO ────────────────────────────────────── */
+  --g-space-xs:     .4rem;     /* 6.4px */
+  --g-space-sm:     .75rem;    /* 12px */
+  --g-space-md:     1.25rem;   /* 20px — gap entre cards */
+  --g-space-lg:     1.75rem;   /* 28px */
+  --g-space-xl:     2.5rem;    /* 40px */
+  --g-space-2xl:    3.5rem;    /* 56px — padding secciones */
+
+  --g-section-py:   3rem;      /* padding vertical secciones estándar */
+
+  /* ── BORDER RADIUS ────────────────────────────────── */
+  --g-r-sm:         8px;
+  --g-r:            14px;      /* base — cards pequeñas */
+  --g-r-lg:         18px;      /* cards principales */
+  --g-r-pill:       999px;     /* botones, badges */
+
+  /* ── LAYOUT ───────────────────────────────────────── */
+  --g-container:    1000px;
+  --g-container-px: 2rem;      /* padding horizontal */
+
+  /* ── SOMBRAS ──────────────────────────────────────── */
+  --g-shadow-card:  0 14px 36px rgba(255, 92, 0, 0.15);
+  --g-shadow-btn:   0 8px 24px rgba(255, 92, 0, 0.3);
+
+  /* ── GRADIENTES ───────────────────────────────────── */
+  --g-grad-btn:     linear-gradient(90deg, #FF8040 0%, #FF5C00 50%, #CC3D00 100%);
+  --g-grad-bar:     linear-gradient(90deg, #FF8040, #FF5C00);
+  --g-grad-bg:      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(80,20,5,.55) 0%, transparent 65%);
+
+  /* ── TRANSICIONES ─────────────────────────────────── */
+  --g-transition:   .18s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPONENTES BASE — copiar/pegar en cualquier landing
+═══════════════════════════════════════════════════════════ */
+
+/* Fondo global con gradiente */
+.g-body {
+  font-family: var(--g-font);
+  background-color: var(--g-bg);
+  background-image: var(--g-grad-bg);
+  background-attachment: fixed;
+  color: var(--g-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.g-container {
+  width: 100%;
+  max-width: var(--g-container);
+  margin-inline: auto;
+  padding-inline: var(--g-container-px);
+}
+
+/* ── BOTÓN PRIMARIO (gradiente) ─── */
+.g-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--g-font);
+  font-weight: var(--g-bold);
+  border-radius: var(--g-r-pill);
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--g-transition), transform var(--g-transition), box-shadow var(--g-transition);
+  white-space: nowrap;
+  background: var(--g-grad-btn);
+  color: var(--g-white);
+  font-size: 1.05rem;
+  padding: 1rem 2.5rem;
+  letter-spacing: .01em;
+}
+.g-btn:hover {
+  opacity: .9;
+  transform: translateY(-1px);
+  box-shadow: var(--g-shadow-btn);
+}
+.g-btn:active { transform: translateY(0); }
+.g-btn--full   { width: 100%; }
+.g-btn--sm     { font-size: .9rem; padding: .78rem 1.75rem; }
+
+/* ── CARD OSCURA ─── */
+.g-card {
+  background: var(--g-bg-card);
+  border: 1.5px solid var(--g-orange);
+  border-radius: var(--g-r-lg);
+  padding: 1.75rem 1.5rem;
+  transition: transform var(--g-transition), box-shadow var(--g-transition);
+}
+.g-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--g-shadow-card);
+}
+
+/* ── CARD BLANCA (progress) ─── */
+.g-card--white {
+  background: var(--g-white);
+  border: none;
+  border-radius: var(--g-r-lg);
+}
+
+/* ── NAVBAR PILL ─── */
+.g-navbar-pill {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  background: var(--g-orange-bg);
+  border: 1.5px solid rgba(255,92,0,.4);
+  border-radius: var(--g-r-pill);
+  padding: .5rem 1.2rem;
+  font-size: .7rem;
+  font-weight: var(--g-bold);
+  letter-spacing: .1em;
+  color: var(--g-orange);
+}
+
+/* ── TEXTO CTA TELEGRAM ─── */
+.g-telegram-note {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .88rem;
+  font-weight: var(--g-semibold);
+  color: var(--g-green);
+}
+
+/* ── STAT BOX ─── */
+.g-stat {
+  background: var(--g-bg-stat);
+  border-radius: var(--g-r);
+  padding: 1.1rem 1.4rem;
+}
+.g-stat__label {
+  font-size: var(--g-text-xs);
+  color: #999;
+  font-weight: var(--g-semibold);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.g-stat__value {
+  font-size: 1.7rem;
+  font-weight: var(--g-black);
+  color: var(--g-orange);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin-top: .2rem;
+}
+
+/* ── PROGRESS BAR ─── */
+.g-progress-bar {
+  height: 8px;
+  background: #e2e2e2;
+  border-radius: var(--g-r-pill);
+  overflow: hidden;
+}
+.g-progress-bar__fill {
+  height: 100%;
+  background: var(--g-grad-bar);
+  border-radius: var(--g-r-pill);
+}
+
+/* ── PLAY BUTTON ─── */
+.g-play {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: rgba(15,15,15,.72);
+  border: 2px solid rgba(255,255,255,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background var(--g-transition), transform var(--g-transition);
+}
+.g-play:hover {
+  background: rgba(255,92,0,.85);
+  transform: scale(1.08);
+}
+
+/* ── HERO PHOTO CARD ─── */
+.g-hero-photo {
+  border-radius: var(--g-r-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+  background: #222;
+}
+.g-hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE PATTERNS — copiar/pegar en cualquier landing
+   Breakpoints: tablet 900px · mobile 768px · small 420px
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet (900px): planes pasan a 1 columna centrada */
+@media (max-width: 900px) {
+  .g-planes-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-inline: auto;
+  }
+}
+
+/* Mobile (768px): layout principal */
+@media (max-width: 768px) {
+  /* Container */
+  .g-container { padding-inline: 1.1rem; }
+
+  /* Botón primario: ancho completo en mobile */
+  .g-btn--mobile-full { width: 100%; }
+
+  /* Hero: foto arriba, texto abajo — foto 16/10 */
+  .g-hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding-inline: 1.1rem;
+  }
+  .g-hero-photo { aspect-ratio: 16/10; border-radius: var(--g-r); }
+
+  /* Progress bar: stack label debajo */
+  .g-progress-bar-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+  .g-progress-bar { width: 100%; }
+
+  /* Stats: mantener 2 columnas pero más compactos */
+  .g-progress-stats { gap: .75rem; }
+  .g-stat { padding: .9rem 1rem; }
+  .g-stat__value { font-size: 1.4rem; }
+
+  /* Cards: 1 columna */
+  .g-planes-grid { grid-template-columns: 1fr; max-width: 100%; }
+
+  /* Premio card: columna centrada */
+  .g-premio-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* CTA final: columna centrada, botón 100% */
+  .g-cta-block {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    gap: 1.4rem;
+  }
+  .g-cta-block .g-btn { width: 100%; }
+
+  /* Footer: columna centrada */
+  .g-footer-inner { flex-direction: column; gap: .9rem; }
+}
+
+/* Small mobile (420px): tipografía aún más compacta */
+@media (max-width: 420px) {
+  .g-hero-title  { font-size: 1.5rem !important; }
+  .g-plan-price  { font-size: 2.1rem !important; }
+  .g-cta-title   { font-size: 1.35rem !important; }
+  .g-stat__value { font-size: 1.25rem; }
+  .g-hero-photo  { aspect-ratio: 4/3; }
+}
