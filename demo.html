@@ -49,13 +49,28 @@
       color: rgba(255,255,255,.75);
       margin-bottom: 1rem;
     }
+    .supporters__scroll-wrap {
+      position: relative;
+    }
+    .supporters__scroll-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, #111);
+      pointer-events: none;
+    }
     .supporters__list {
       list-style: none;
       margin: 0; padding: 0;
       display: flex;
       flex-direction: column;
       gap: .6rem;
+      max-height: 220px;
+      overflow-y: auto;
+      scrollbar-width: none;
     }
+    .supporters__list::-webkit-scrollbar { display: none; }
     .supporter {
       display: flex;
       align-items: center;
@@ -63,7 +78,10 @@
       padding: .55rem .75rem;
       border-radius: 10px;
       background: rgba(255,255,255,.04);
+      transition: opacity .2s;
     }
+    .supporter:nth-child(4) { opacity: .45; }
+    .supporter:nth-child(5) { opacity: .2; }
     .supporter__avatar {
       width: 32px; height: 32px;
       border-radius: 50%;
@@ -184,6 +202,7 @@
   <section class="supporters-section">
     <div class="container">
       <p class="supporters__label">Últimos en unirse</p>
+      <div class="supporters__scroll-wrap">
       <ul class="supporters__list">
         <li class="supporter">
           <div class="supporter__avatar">CA</div>
@@ -246,6 +265,7 @@
           <span class="supporter__time">hace 12 h</span>
         </li>
       </ul>
+      </div>
     </div>
   </section>
 
