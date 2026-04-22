@@ -80,8 +80,6 @@
       background: rgba(255,255,255,.04);
       transition: opacity .2s;
     }
-    .supporter:nth-child(4) { opacity: .45; }
-    .supporter:nth-child(5) { opacity: .2; }
     .supporter__avatar {
       width: 32px; height: 32px;
       border-radius: 50%;
@@ -109,6 +107,16 @@
       font-size: .68rem;
       color: rgba(255,255,255,.22);
       white-space: nowrap;
+    }
+
+    /* Instagram section */
+    .ig-section {
+      padding: 2rem 0 2.5rem;
+    }
+    .ig-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -354,6 +362,24 @@
             Al completarse la meta de los $10.000.000, el patrocinador que más haya colaborado en este ciclo recibirá un <strong>Jersey oficial de competencia autografiado</strong> y una <strong>videollamada personalizada</strong> con Juan desde Japón.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="ig-section">
+    <div class="container">
+      <p class="supporters__label">Síguelo en Instagram</p>
+      <div class="ig-wrap">
+        <!-- Reemplaza la URL del blockquote con el link real del post de Instagram -->
+        <blockquote
+          class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/p/REEMPLAZA_CON_URL_DEL_POST/"
+          data-instgrm-version="14"
+          style="background:#1a1a1a;border:0;border-radius:14px;margin:0 auto;max-width:480px;width:100%;">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
       </div>
     </div>
   </section>
