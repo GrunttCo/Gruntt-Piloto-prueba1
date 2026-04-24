@@ -37,9 +37,17 @@
       color: #fff; letter-spacing: -.03em;
     }
 
-    /* Últimos patrocinadores */
+    /* Patrocinadores — split dos columnas */
     .supporters-section {
       padding: 2rem 0 2.5rem;
+    }
+    .supporters-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 640px) {
+      .supporters-split { grid-template-columns: 1fr; }
     }
     .supporters__label {
       font-size: 1rem;
@@ -92,6 +100,7 @@
     }
     .supporter__avatar--b { background: #e05500; }
     .supporter__avatar--c { background: #c94a00; }
+    .supporter__avatar--gold { background: #b8860b; }
     .supporter__name {
       font-size: .85rem;
       font-weight: 600;
@@ -108,6 +117,21 @@
       color: rgba(255,255,255,.22);
       white-space: nowrap;
     }
+    .supporter__amount {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #FF6600;
+      white-space: nowrap;
+    }
+    .supporter__rank {
+      width: 20px;
+      font-size: .7rem;
+      font-weight: 800;
+      color: rgba(255,255,255,.25);
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .supporter__rank--top { color: #FF6600; }
 
     /* Instagram section */
     .ig-section {
@@ -236,73 +260,149 @@
     </div>
   </section>
 
-  <!-- ÚLTIMOS PATROCINADORES -->
+  <!-- PATROCINADORES: DOS COLUMNAS -->
   <section class="supporters-section">
     <div class="container">
-      <p class="supporters__label">Últimos en unirse</p>
-      <div class="supporters__scroll-wrap">
-      <ul class="supporters__list">
-        <li class="supporter">
-          <div class="supporter__avatar">CA</div>
-          <span class="supporter__name">Carlos A.</span>
-          <span class="supporter__plan">Patrocinador Oro</span>
-          <span class="supporter__time">hace 5 min</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--b">MR</div>
-          <span class="supporter__name">María R.</span>
-          <span class="supporter__plan">Team Élite</span>
-          <span class="supporter__time">hace 18 min</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--c">JP</div>
-          <span class="supporter__name">Juan P.</span>
-          <span class="supporter__plan">Fan de Corazón</span>
-          <span class="supporter__time">hace 34 min</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar">LG</div>
-          <span class="supporter__name">Laura G.</span>
-          <span class="supporter__plan">Team Élite</span>
-          <span class="supporter__time">hace 1 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--b">DM</div>
-          <span class="supporter__name">Diego M.</span>
-          <span class="supporter__plan">Patrocinador Oro</span>
-          <span class="supporter__time">hace 2 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--c">AV</div>
-          <span class="supporter__name">Alejandra V.</span>
-          <span class="supporter__plan">Fan de Corazón</span>
-          <span class="supporter__time">hace 3 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar">SC</div>
-          <span class="supporter__name">Sebastián C.</span>
-          <span class="supporter__plan">Team Élite</span>
-          <span class="supporter__time">hace 5 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--b">VH</div>
-          <span class="supporter__name">Valentina H.</span>
-          <span class="supporter__plan">Fan de Corazón</span>
-          <span class="supporter__time">hace 7 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar supporter__avatar--c">RF</div>
-          <span class="supporter__name">Ricardo F.</span>
-          <span class="supporter__plan">Patrocinador Oro</span>
-          <span class="supporter__time">hace 9 h</span>
-        </li>
-        <li class="supporter">
-          <div class="supporter__avatar">NT</div>
-          <span class="supporter__name">Natalia T.</span>
-          <span class="supporter__plan">Team Élite</span>
-          <span class="supporter__time">hace 12 h</span>
-        </li>
-      </ul>
+      <div class="supporters-split">
+
+        <!-- IZQUIERDA: Máximos donadores -->
+        <div>
+          <p class="supporters__label">Máximos donadores</p>
+          <div class="supporters__scroll-wrap">
+            <ul class="supporters__list">
+              <li class="supporter">
+                <span class="supporter__rank supporter__rank--top">1</span>
+                <div class="supporter__avatar supporter__avatar--gold">DM</div>
+                <span class="supporter__name">Diego M.</span>
+                <span class="supporter__amount">$96.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank supporter__rank--top">2</span>
+                <div class="supporter__avatar">CA</div>
+                <span class="supporter__name">Carlos A.</span>
+                <span class="supporter__amount">$88.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank supporter__rank--top">3</span>
+                <div class="supporter__avatar supporter__avatar--b">RF</div>
+                <span class="supporter__name">Ricardo F.</span>
+                <span class="supporter__amount">$72.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">4</span>
+                <div class="supporter__avatar supporter__avatar--c">MR</div>
+                <span class="supporter__name">María R.</span>
+                <span class="supporter__amount">$30.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">5</span>
+                <div class="supporter__avatar">LG</div>
+                <span class="supporter__name">Laura G.</span>
+                <span class="supporter__amount">$30.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">6</span>
+                <div class="supporter__avatar supporter__avatar--b">NT</div>
+                <span class="supporter__name">Natalia T.</span>
+                <span class="supporter__amount">$30.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">7</span>
+                <div class="supporter__avatar supporter__avatar--c">SC</div>
+                <span class="supporter__name">Sebastián C.</span>
+                <span class="supporter__amount">$30.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">8</span>
+                <div class="supporter__avatar">JP</div>
+                <span class="supporter__name">Juan P.</span>
+                <span class="supporter__amount">$12.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">9</span>
+                <div class="supporter__avatar supporter__avatar--b">AV</div>
+                <span class="supporter__name">Alejandra V.</span>
+                <span class="supporter__amount">$12.000</span>
+              </li>
+              <li class="supporter">
+                <span class="supporter__rank">10</span>
+                <div class="supporter__avatar supporter__avatar--c">VH</div>
+                <span class="supporter__name">Valentina H.</span>
+                <span class="supporter__amount">$12.000</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DERECHA: Últimos en unirse -->
+        <div>
+          <p class="supporters__label">Últimos en unirse</p>
+          <div class="supporters__scroll-wrap">
+            <ul class="supporters__list">
+              <li class="supporter">
+                <div class="supporter__avatar">CA</div>
+                <span class="supporter__name">Carlos A.</span>
+                <span class="supporter__plan">Patrocinador Oro</span>
+                <span class="supporter__time">hace 5 min</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--b">MR</div>
+                <span class="supporter__name">María R.</span>
+                <span class="supporter__plan">Team Élite</span>
+                <span class="supporter__time">hace 18 min</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--c">JP</div>
+                <span class="supporter__name">Juan P.</span>
+                <span class="supporter__plan">Fan de Corazón</span>
+                <span class="supporter__time">hace 34 min</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar">LG</div>
+                <span class="supporter__name">Laura G.</span>
+                <span class="supporter__plan">Team Élite</span>
+                <span class="supporter__time">hace 1 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--b">DM</div>
+                <span class="supporter__name">Diego M.</span>
+                <span class="supporter__plan">Patrocinador Oro</span>
+                <span class="supporter__time">hace 2 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--c">AV</div>
+                <span class="supporter__name">Alejandra V.</span>
+                <span class="supporter__plan">Fan de Corazón</span>
+                <span class="supporter__time">hace 3 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar">SC</div>
+                <span class="supporter__name">Sebastián C.</span>
+                <span class="supporter__plan">Team Élite</span>
+                <span class="supporter__time">hace 5 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--b">VH</div>
+                <span class="supporter__name">Valentina H.</span>
+                <span class="supporter__plan">Fan de Corazón</span>
+                <span class="supporter__time">hace 7 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar supporter__avatar--c">RF</div>
+                <span class="supporter__name">Ricardo F.</span>
+                <span class="supporter__plan">Patrocinador Oro</span>
+                <span class="supporter__time">hace 9 h</span>
+              </li>
+              <li class="supporter">
+                <div class="supporter__avatar">NT</div>
+                <span class="supporter__name">Natalia T.</span>
+                <span class="supporter__plan">Team Élite</span>
+                <span class="supporter__time">hace 12 h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
